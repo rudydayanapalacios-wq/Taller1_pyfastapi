@@ -1,16 +1,25 @@
 from models import trainee_model
 from templates import trainee_template
 
+
+
+def init_app_data():
+    """Inicializa los datos de la plicación , creando de la tebla de aprendices si no existe """
+    trainee_model.load_data()    
+
+
 def register_trainee_view():
     """Logica para procesar el registro de un aprendiz desde la vista."""
     data = trainee_template.get_trainee_input()
 
     # Validar si el aprendiz ya existe
     if trainee_model.search_by_document(data["documento"]):
-        trainee_template.display_message({
+        trainee_template.display_message(
+            {
             "type": "error",
             "text": "Ya existe un aprendiz registrado con este número de documento."
-        })
+            }
+        )
         return
 
     # Registrar aprendiz a través de la capa MODELO
