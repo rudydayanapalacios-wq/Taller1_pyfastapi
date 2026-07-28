@@ -1,5 +1,10 @@
 # 📒 Titulo y descripcion.
 
+Nombre:Rudy Dyana Placios Ayala
+Ficha:3406204
+* Competencia:Elaboración de la propuesta técnica para la solución de software.
+* Implantación del del software
+
 ## **Sistema de Registro de Aprendices SENA**
 
 Proyecto en Python para la gestion de aprendices SENA mediante interfaz por consola.
@@ -14,7 +19,7 @@ Proyecto en Python para la gestion de aprendices SENA mediante interfaz por cons
 
 # 📁 Estructura del proyecto
 
-```text
+```markdown
 Taller1_pyfastapi/
 │
 ├── data/
@@ -40,3 +45,4 @@ Taller1_pyfastapi/
 ├── Prueba.ipynb            
 ├── README.md               # Documentacion del proyecto
 └── requirements.txt        # Dependencia (FastAPI, Uvicorn, Pydantic, etc.)
+```
