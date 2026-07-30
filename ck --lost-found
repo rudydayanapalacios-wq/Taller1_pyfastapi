@@ -1,0 +1,16 @@
+[33mab56367[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: rebase (finish): returning to refs/heads/main
+[33mab56367[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: rebase (pick): feat: refactorizar la ruta del archivo JSON y fortalecer las validaciones de entrada
+[33mf0b624b[m HEAD@{2}: rebase (start): checkout HEAD~3
+[33md0c5193[m HEAD@{3}: rebase (finish): returning to refs/heads/main
+[33md0c5193[m HEAD@{4}: rebase (finish): refs/heads/main onto f0b624b20248f6c2df2b96f7e389f57cafdab144
+[33md0c5193[m HEAD@{5}: rebase (abort): returning to refs/heads/main
+[33md0c5193[m HEAD@{6}: rebase (abort): returning to refs/heads/main
+[33md0c5193[m HEAD@{7}: commit: feat: refactorizar la ruta del archivo JSON y fortalecer las validaciones de entrada
+[33m05dcb0f[m HEAD@{8}: reset: moving to 05dcb0f
+[33m05dcb0f[m HEAD@{9}: reset: moving to 05dcb0f
+[33mf0b624b[m HEAD@{10}: reset: moving to f0b624b
+[33m05dcb0f[m HEAD@{11}: commit: feat:Refactorizamos y creamos la carpeta data y el archivo JSON
+[33mf0b624b[m HEAD@{12}: commit: feat:Persistencia de datos en archivo JSON
+[33m7fc1321[m HEAD@{13}: commit: docs: Modificación información del README
+[33m2d9b3b8[m HEAD@{14}: Branch: renamed refs/heads/master to refs/heads/main
+[33m2d9b3b8[m HEAD@{16}: commit (initial): feat: Estructura MVT, view, register aprendiz
