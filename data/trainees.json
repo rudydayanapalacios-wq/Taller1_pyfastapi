@@ -4,20 +4,39 @@
         "documento": "289438",
         "nombre": "Gnfduih",
         "ficha": "57877t84",
-        "programa": "Adso"
+        "programa": "Adso",
+        "correo": "gnfduih@example.com"
     },
     {
         "tipo_doc": "FF",
         "documento": "345",
         "nombre": "Fddsf",
         "ficha": "254",
-        "programa": "Fds<"
+        "programa": "Fds<",
+        "correo": "francisco.gomez@example.com"
     },
     {
         "tipo_doc": "CC",
         "documento": "1027894",
         "nombre": "Ludy Payana",
         "ficha": "6789034",
-        "programa": "Adsi"
+        "programa": "Adsi",
+        "correo": "ludy.payana@example.com"
+    },
+    {
+        "tipo_doc": "CC",
+        "documento": "4299'189",
+        "nombre": "Hjrfbahl",
+        "ficha": "7401982",
+        "programa": "Hbvbw",
+        "correo": "hjdbcha@iufe"
+    },
+    {
+        "tipo_doc": "TI",
+        "documento": "108976454",
+        "nombre": "Mully Pallala Malaniod Amana",
+        "ficha": "340467",
+        "programa": "Almon",
+        "correo": "mullypallaya@gmail.com"
     }
 ]
