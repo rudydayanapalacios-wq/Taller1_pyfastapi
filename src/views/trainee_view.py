@@ -4,7 +4,6 @@ from models import trainee_model
 from templates import trainee_template
 
 
-
 ALLOWED_DOCUMENT_TYPES = {"CC", "TI", "CE"}
 
 
@@ -18,8 +17,12 @@ def validate_trainee_field(field, value):
 
     if field in {"nombre", "programa"}:
         label = "El nombre" if field == "nombre" else "El programa"
+
         if not value or not all(part.isalpha() for part in value.split()):
             return f"{label} solo puede contener letras y espacios."
+
+        if len(value) > 30:
+            return f"{label} no puede tener más de 30 caracteres."
 
     if field == "ficha" and not value.isdigit():
         return "La ficha solo puede contener números."
@@ -43,7 +46,7 @@ def validate_trainee(data):
 
 def init_app_data():
     """Inicializa los datos de la plicación , creando de la tebla de aprendices si no existe """
-    trainee_model.load_data()    
+    trainee_model.load_data()
 
 
 def register_trainee_view():
@@ -60,8 +63,8 @@ def register_trainee_view():
     if trainee_model.search_by_document(data["documento"]):
         trainee_template.display_message(
             {
-            "type": "error",
-            "text": "Ya existe un aprendiz registrado con este número de documento."
+                "type": "error",
+                "text": "Ya existe un aprendiz registrado con este número de documento."
             }
         )
         return
