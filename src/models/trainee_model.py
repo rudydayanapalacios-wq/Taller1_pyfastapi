@@ -47,3 +47,10 @@ def register_trainee(new_trainee):
     trainees.append(new_trainee)
     save_data()  # Guardar los datos después de registrar un nuevo aprendiz 
     return True
+
+
+
+def test_user_model():
+    user = User(username="testuser", email="testuser@example.com")
+    assert user.username == "testuser"
+    assert user.email == "testuser@example.com"
