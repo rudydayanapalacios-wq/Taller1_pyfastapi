@@ -22,6 +22,40 @@ def get_trainee_input(validate_field):
     return data
 
 
+def get_document_input(prompt):
+    """Solicita el documento usado para identificar a un aprendiz."""
+    return input(prompt).strip()
+
+
+def get_trainee_update_input(current_trainee, validate_field):
+    """Solicita los nuevos datos; una entrada vacia conserva el valor actual."""
+    fields = (
+        ("tipo_doc", "Tipo de documento (CC/TI/CE)", str.upper),
+        ("documento", "Numero de documento", str),
+        ("nombre", "Nombre completo", str.title),
+        ("ficha", "Ficha", str),
+        ("programa", "Programa", str.title),
+        ("correo", "Correo electronico", str.lower),
+    )
+    data = {}
+
+    for field, label, formatter in fields:
+        while True:
+            value = input(f"{label} [{current_trainee[field]}]: ").strip()
+            if not value:
+                data[field] = current_trainee[field]
+                break
+
+            value = formatter(value)
+            error = validate_field(field, value)
+            if not error:
+                data[field] = value
+                break
+            display_message({"type": "error", "text": error})
+
+    return data
+
+
 def display_message(message):
     icons = {
         "success": "✅",

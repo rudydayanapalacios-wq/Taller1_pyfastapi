@@ -83,3 +83,70 @@ def status_view():
     """Muestra el estado actual de la lista de aprendices."""
     all_trainees = trainee_model.get_all()
     trainee_template.display_trainee(all_trainees)
+
+
+def edit_trainee_view():
+    """Edita los datos de un aprendiz existente."""
+    document = trainee_template.get_document_input("Documento del aprendiz a editar: ")
+    current_trainee = trainee_model.search_by_document(document)
+    if not current_trainee:
+        trainee_template.display_message({"type": "error", "text": "No se encontro un aprendiz con ese documento."})
+        return
+
+    updated_data = trainee_template.get_trainee_update_input(current_trainee, validate_trainee_field)
+    errors = validate_trainee(updated_data)
+    if errors:
+        for error in errors:
+            trainee_template.display_message({"type": "error", "text": error})
+        return
+
+    if trainee_model.update_trainee(document, updated_data):
+        trainee_template.display_message({"type": "success", "text": "Aprendiz actualizado exitosamente."})
+    else:
+        trainee_template.display_message({"type": "error", "text": "El documento ingresado ya pertenece a otro aprendiz."})
+
+
+def delete_trainee_view():
+
+    """Elimina un aprendiz mediante su numero de documento."""
+    document = trainee_template.get_document_input("Documento del aprendiz a eliminar: ")
+    if trainee_model.delete_trainee(document):
+        trainee_template.display_message({"type": "success", "text": "Aprendiz eliminado exitosamente."})
+    else:
+        trainee_template.display_message({"type": "error", "text": "No se encontro un aprendiz con ese documento."})
+
+
+def search_trainee_view():
+    """Busca aprendices por una parte de su nombre o por ficha."""
+    criterion = trainee_template.get_document_input("Buscar por (nombre/ficha): ").lower()
+    value = trainee_template.get_document_input(f"{criterion.title()} a buscar: ")
+
+    if criterion == "nombre":
+        results = trainee_model.search_by_name(value)
+    elif criterion == "ficha":
+        results = trainee_model.search_by_ficha(value)
+    else:
+        trainee_template.display_message({"type": "error", "text": "Criterio invalido. Use nombre o ficha."})
+        return
+
+    if results:
+        trainee_template.display_trainee(results)
+    else:
+        trainee_template.display_message({"type": "info", "text": "No se encontraron aprendices."})
+
+
+def export_trainees_view():
+    """Exporta la lista actual de aprendices a CSV."""
+    trainees = trainee_model.get_all()
+    if not trainees:
+        trainee_template.display_message({
+            "type": "info",
+            "text": "No hay aprendices para exportar."
+        })
+        return
+
+    file_path = trainee_model.export_to_csv()
+    trainee_template.display_message({
+        "type": "success",
+        "text": f"Aprendices exportados exitosamente a {file_path}."
+    })

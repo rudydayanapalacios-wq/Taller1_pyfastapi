@@ -16,12 +16,12 @@
         "correo": "francisco.gomez@example.com"
     },
     {
-        "tipo_doc": "CC",
+        "tipo_doc": "TI",
         "documento": "1027894",
-        "nombre": "Ludy Payana",
-        "ficha": "6789034",
-        "programa": "Adsi",
-        "correo": "ludy.payana@example.com"
+        "nombre": "Pison",
+        "ficha": "8889",
+        "programa": "Ftygyu",
+        "correo": "ggy@gmail.com"
     },
     {
         "tipo_doc": "CC",
@@ -40,11 +40,19 @@
         "correo": "mullypallaya@gmail.com"
     },
     {
-        "tipo_doc": "CC",
-        "documento": "12345678",
-        "nombre": "Gkjkerkemkmenrjkfne",
-        "ficha": "94387429",
-        "programa": "Hjsfjh",
-        "correo": "jhbj@gmail.com"
+        "tipo_doc": "CE",
+        "documento": "10987634",
+        "nombre": "Linda Caicedo",
+        "ficha": "356478",
+        "programa": "Gestion Empresarial",
+        "correo": "lindaempres@gmail.com"
+    },
+    {
+        "tipo_doc": "CE",
+        "documento": "78910284567",
+        "nombre": "Hrry Potther",
+        "ficha": "64171804",
+        "programa": "Grifindor",
+        "correo": "harrypott@gmail.com"
     }
 ]
